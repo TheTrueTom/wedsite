@@ -1,0 +1,71 @@
+/* --------------------------------
+
+Primary style
+
+-------------------------------- */
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background-color: #f8f8f8;
+  background: url('../img/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/*******************************************************************************
+
+Main Components
+
+*******************************************************************************/
+
+#mainContainer {
+  height: 2000px;
+}
+
+#navigationBar {
+  position: fixed;
+  bottom: 0px;
+
+  width: 100%;
+
+  background-color: rgba(255, 255, 255, 0.8);
+
+  padding-left: 2em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+
+  color: #555;
+  text-transform: uppercase;
+}
+
+#navigationBar a {
+  color: #555;
+  font-size: 1em;
+  text-decoration: none;
+  padding-left: 1em;
+  padding-right: 1em;
+  transition: 0.4s;
+}
+
+#navigationBar a:hover {
+  color: #111;
+}
+
+#navigationBar .lastItem {
+  padding-left: 1em;
+  padding-right: 1em;
+
+  float: right;
+}
+
+#names {
+  margin-top: 2vw;
+  margin-right: 2vw;
+
+  color: white;
+  font-weight: 300;
+  font-size: 6vw;
+  text-align: right;
+}
