@@ -61,10 +61,6 @@ Main Components
   background-color: #f8f8f8;
 }
 
-#mainContainer {
-  /*height: 2000px;*/
-}
-
 #navigationBar {
   position: fixed;
   bottom: 0px;
