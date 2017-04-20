@@ -14,14 +14,55 @@ body {
   background-size: cover;
 }
 
+h1 {
+  font-weight: 700;
+  padding-top: 4em;
+  font-size: 2em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.light h1 {
+  color: rgba(80, 80, 80, 1)
+}
+
+.dark h1 {
+  color: rgba(250, 250, 250, 1)
+}
+
+h2 {
+
+  font-weight: 300;
+  font-size: 1.2em;
+  padding-bottom: 2em;
+  text-align: center;
+  color: rgba(100, 100, 100, 1);
+}
+
+.light h2 {
+  color: rgba(100, 100, 100, 1);
+}
+
+.dark h2 {
+  color: rgba(230, 230, 230, 1);
+}
+
 /*******************************************************************************
 
 Main Components
 
 *******************************************************************************/
 
+.dark {
+  background-color: #959595;
+}
+
+.light {
+  background-color: #f8f8f8;
+}
+
 #mainContainer {
-  height: 2000px;
+  /*height: 2000px;*/
 }
 
 #navigationBar {
@@ -30,7 +71,7 @@ Main Components
 
   width: 100%;
 
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(250, 250, 250, 0.8);
 
   padding-left: 2em;
   padding-top: 1em;
@@ -38,6 +79,8 @@ Main Components
 
   color: #555;
   text-transform: uppercase;
+
+  box-shadow: 0 5px 5px 2px rgba(1,1,1,1);
 }
 
 #navigationBar a {
@@ -61,11 +104,41 @@ Main Components
 }
 
 #names {
-  margin-top: 2vw;
-  margin-right: 2vw;
+  padding-top: 2vw;
+  padding-right: 2vw;
 
   color: white;
   font-weight: 300;
   font-size: 6vw;
   text-align: right;
+
+  height: 100vh;
+}
+
+#SaveTheDate {
+  height: 100vh;
+  width: 100vw;
+}
+
+#SaveTheDate iframe {
+  display: block;
+  margin: 0 auto;
+  height: 60vh;
+  width: 60vw;
+}
+
+#temoins {
+  height: 100vh;
+}
+
+#lieu {
+  height: 100vh;
+}
+
+#planning {
+  height: 100vh;
+}
+
+#RSVP {
+  height: 100vh;
 }
