@@ -14,9 +14,16 @@ body {
   background-size: cover;
 }
 
+@media only screen and (max-width: 767px) {
+  body {
+    background: url('../img/background.jpg') no-repeat center -150px scroll;
+    background-size: auto;
+  } 
+}
+
 h1 {
   font-weight: 700;
-  padding-top: 4em;
+  padding-top: 2em;
   font-size: 2em;
   text-align: center;
   text-transform: uppercase;
@@ -54,11 +61,26 @@ Main Components
 *******************************************************************************/
 
 .dark {
-  background-color: #959595;
+  background-color: #A8BDD9;
 }
 
 .light {
   background-color: #f8f8f8;
+}
+
+.social {
+  position: fixed;
+  top: 3vh;
+  left: 2vw;
+}
+
+.social img {
+  height: 6vh;
+  width: auto;
+}
+
+.social a {
+  line-height: 5vh;
 }
 
 #navigationBar {
@@ -119,11 +141,15 @@ Main Components
 #SaveTheDate iframe {
   display: block;
   margin: 0 auto;
-  height: 60vh;
-  width: 60vw;
+  height: 100%;
+  width: 100%;
 }
 
-#temoins {
+#hebergements {
+  height: 100vh;
+}
+
+#covoiturage {
   height: 100vh;
 }
 
