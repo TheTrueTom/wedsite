@@ -83,6 +83,14 @@ Main Components
   line-height: 5vh;
 }
 
+.roundImage {
+  border-radius: 50%;
+  overflow: hidden;
+  height: 150px;
+  width: 150px;
+  border: 5px solid red;
+}
+
 #navigationBar {
   position: fixed;
   bottom: 0px;
