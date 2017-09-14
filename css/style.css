@@ -91,6 +91,50 @@ Main Components
   border: 5px solid red;
 }
 
+.roundImage:hover {
+  border-color: blue;
+}
+
+.centeredText {
+  text-align: center;
+  margin: 20vh;
+}
+
+.textLeft {
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.textRight {
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.imgLeft {
+  vertical-align: middle;
+  display: table-cell;
+  width: 30vw;
+  margin-right: 2em;
+}
+
+.imgRight {
+  vertical-align: middle;
+  display: table-cell;
+  width: 30vw;
+  margin-left: 2em;
+}
+
+.row {
+  display: table;
+}
+
+.subContainer {
+  width: 80vw;
+  margin: 0 auto;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
+
 #navigationBar {
   position: fixed;
   bottom: 0px;
@@ -142,14 +186,13 @@ Main Components
 }
 
 #SaveTheDate {
-  height: 100vh;
-  width: 100vw;
+  width: 100%;
 }
 
 #SaveTheDate iframe {
   display: block;
   margin: 0 auto;
-  height: 100%;
+  height: 93vh;
   width: 100%;
 }
 
@@ -158,10 +201,6 @@ Main Components
 }
 
 #covoiturage {
-  height: 100vh;
-}
-
-#lieu {
   height: 100vh;
 }
 
