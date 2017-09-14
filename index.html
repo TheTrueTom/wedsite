@@ -9,13 +9,13 @@
 	<link href="https://fonts.googleapis.com/css?family=Quicksand:300, 400, 500, 700" rel="stylesheet" />
 
 	<title>Delphine & Thomas</title>
+
+	<script   src="https://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="   crossorigin="anonymous"></script>
+
+	<script language="JavaScript" src="scripts/gen_validatorv31.js" type="text/javascript"></script>
 </head>
 <body>
 <div id="mainContainer">
-	<div class="social">
-		<a href=""><img src="img/instagram.png" alt="instagram" /></a><br />
-		<a href="src/event.ics"><img src="img/calendar.png" alt="Ajouter au calendrier" /></a>
-	</div>
 	<div id="names">
 		Delphine<br />
 		& Thomas
@@ -28,12 +28,15 @@
 		<h1>Lieu</h1>
 		<div class="subContainer">
 			
-			<div class="row"><span  class="textLeft">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+			<div class="row"><span  class="textLeft">À mi-chemin entre la vallée du Rhône et Aubenas, entre le plateau du Coiron et la Vallée de l'Ibie, Villeneuve-de-Berg se situe en plein coeur de l'Ardèche méridionale. C'est dans l'église Saint-Louis que nous nous marierons le 15 septembre.</span>
 			<span><img class="imgRight" src="img/vdb.jpg" alt="Église Saint-Louis de Villeneuve de Berg" /></span></div>
 			
 			<div class="row"><span><img class="imgLeft" src="img/ranchisses1.jpg" alt="Domaine des ranchisses" /></span>
-			<span class="textRight">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></div>
+			<span class="textRight">Pour le cocktail et le dîner, nous nous retrouverons au domaine des Ranchisses. Celui-ci se trouve sur la commune de l'Argentière à 35 minutes environ de Villeneuve-de-Berg. De très nombreux logements sont proposés sur place. Vous pourrez retrouver plus d'informations dans la rubrique Hébergement du site.</span></div>
 		</div>
+	</div>
+	<div id="map" class="dark">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d90965.80792399636!2d4.324377819305915!3d44.56262299768432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x12b519150f9455bf%3A0x127745369fefeebd!2s%C3%89glise+Saint-Louis%2C+131+Place+du+Jeux+de+Paume%2C+07170+Villeneuve-de-Berg!3m2!1d44.557572!2d4.5024434!4m5!1s0x12b4e6926f6c8e65%3A0xa11b4360d3738929!2sdomaine+des+ranchisses!3m2!1d44.561208699999995!2d4.286201999999999!5e0!3m2!1sfr!2sfr!4v1505401068514" frameborder="0" style="border:0" allowfullscreen></iframe>
 	</div>
 	<div id="hebergements" class="dark">
 		<h1>Hébergement</h1>
@@ -49,17 +52,132 @@
 		<p class="centeredText">Revenez un peu plus tard, nous vous proposerons ici des solutions pour co-voiturer jusqu'au mariage.</p>
 	</div>
 	<div id="RSVP" class="light">
-		<h1>Réponse</h1>
-		<h2>Ou pour tout simplement nous contacter</h2>
+		<h1>Nous contacter</h1>
+		<h2>On prend tout, mots doux, poèmes, rébus, énigmes ou suggestions de musique !</h2>
+		<div id="formContainer" class="row subContainer">
+			<div id="form">
+				<div class="pills pills__guestbook">
+					<ul id="pill-messagetype-list" class="pills__list">
+						<li id="pill-message" class="pills__item custom-primary__border is__active">
+							<a class="cursor-pointer js-text-message">
+								Message
+							</a>
+						</li>
+						<li id="pill-song" class="pills__item custom-primary__border">
+							<a class="cursor-pointer js-song-message">
+								Chanson
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div id="messageForm">
+					<form method="POST" name="contactform" action="src/contact-form-handler.php">
+					<div id="name">
+						<input type="text" placeholder="Nom et prénom" id="nom" class="required" name="name" minlength="2" required/>
+					</div>
+					<div id="mail">
+						<input type="text" placeholder="E-mail" id="email" class="required  email" name="email" required/>
+					</div>
+					<div id="message">
+						<textarea id="message" placeholder="Message" class="required" name="message" rows="7" cols="50" required></textarea>
+					</div>
+					<div id="send">
+						<input id="submit" type="submit" name="submit" value="Envoyer" />
+					</div>
+					</form>
+				</div>
+				<div id="songForm" style="display: none;  padding-bottom: 20em;"">
+					<p class="songDisclaimer">Une idée de musique pour la playlist du mariage ?</p>
+					<form method="POST" name="songform" action="src/song-form-handler.php">
+					<div id="name">
+						<input type="text" placeholder="Nom de la musique" id="nom" class="required" name="name" minlength="2" required/>
+					</div>
+					<div id="send">
+						<input id="submit" type="submit" name="submit" value="Proposer"/>
+					</div>
+					</form>
+				</div>
+			</div>
+			<div id="instagram" class="social">
+				<h2>Suivez nos aventures sur instagram</h2>
+				<a href="https://www.instagram.com/delphinethomas2018/"><img src="img/instagram.png" alt="instagram" /></a>
+			</div>
+		</div>
 	</div>
 </div>
 <div id="navigationBar">
-	<a href="#SaveTheDate">Save the date</a> | 
+	<a href="#SaveTheDate"><img src="img/STD.png" alt="Save the date" /></a>
+	<a href="#lieu"><img src="img/lieu.png" alt="Lieu & Hébergements" ></a>
+	<a href="#map"><img src="img/map.png" alt="Carte" ></a>
+	<a href="#planning"><img src="img/planning.png" alt="Planning" /></a>
+	<a href="#covoiturage"><img src="img/covoiturage.png" alt="Covoiturage" /></a>
+	<a href="#RSVP"><img src="img/RSVP.png" alt="RSVP" /></a>
+	<!--<a href="#SaveTheDate">Save the date</a> | 
 	<a href="#lieu">Lieu & Hébergements</a> | 
 	<a href="#planning">Planning</a> | 
 	<a href="#covoiturage">Covoiturage</a> | 
-	<a href="#RSVP">RSVP</a>
+	<a href="#RSVP">RSVP</a>-->
 	<div class="lastItem">Delphine + Thomas = 2018</div>
 </div>
+<script language="JavaScript">
+	// Code for validating the form
+	// Visit http://www.javascript-coder.com/html-form/javascript-form-validation.phtml
+	// for details
+	var frmvalidator  = new Validator("contactform");
+	frmvalidator.addValidation("name","req","Merci d'entrer votre nom"); 
+	frmvalidator.addValidation("email","req","Merci d'entrer votre email"); 
+	frmvalidator.addValidation("email","email","Merci d'entrer un email valide"); 
+</script>
+<script language="JavaScript">
+window.onload = function() {
+    $(".js-text-message").click(function() {
+                $("#content_type-message").prop("checked", !0);
+                document.getElementById('messageForm').style.display = 'block';
+                document.getElementById('songForm').style.display = 'none';
+                setActivePill("#pill-messagetype-list", "pill-message")
+            });
+    
+    $(".js-song-message").click(function() {
+                $("#content_type-song").prop("checked", !0);
+                document.getElementById('songForm').style.display = 'block';
+                document.getElementById('messageForm').style.display = 'none';
+                setActivePill("#pill-messagetype-list", "pill-song")
+            });
+    
+    var setActivePill = function(pillList, activePill) {
+        $(pillList).find('li').each(function() {
+            if ($(this).attr('id') == activePill) {
+                $(this).addClass('is__active')
+            } else {
+                $(this).removeClass('is__active')
+            }
+        })
+    };
+
+    function GetURLParameter(sParam) {
+    	var sPageURL = window.location.search.substring(1);
+    	var sURLVariables = sPageURL.split('&');
+
+    	for (var i = 0; i < sURLVariables.length; i++)
+    	{
+    		var sParameterName = sURLVariables[i].split('=');
+    		if (sParameterName[0] == sParam)
+    		{
+    			return sParameterName[1];
+    		}
+    	}
+    }
+
+    var success = GetURLParameter("success");
+
+	if (success == 1) {
+		alert("Merci beaucoup pour ton message !");
+	}
+
+	if (success == 2) {
+		alert("Merci pour cette musique suggérée !")
+	}
+};
+</script>
 </body>
 </html>
