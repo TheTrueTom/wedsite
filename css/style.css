@@ -326,15 +326,7 @@ textarea {
     text-decoration: none
 }
 
-.pills a .icon {
-    color: #666
-}
-
 .pills a:hover {
-    color: #A8BDD9
-}
-
-.pills a:hover .icon {
     color: #A8BDD9
 }
 
@@ -346,17 +338,17 @@ textarea {
     .pills__list {
         overflow-x: auto;
         overflow-y: hidden;
-        white-space: nowrap
+        white-space: nowrap;
     }
 }
 
 .pills__item {
     display: inline-block;
-    position: relative
+    position: relative;
 }
 
 .pills__item.is__active {
-    font-weight: bold
+    font-weight: bold;
 }
 
 .pills__item.is__active::after {
@@ -365,74 +357,34 @@ textarea {
     content: '';
     left: 5px;
     position: absolute;
-    right: 5px
+    right: 5px;
 }
 
 .pills__guestbook li {
-    margin: 0 5px
+    margin: 0 5px;
 }
 
 .pills__guestbook li:last-child {
-    margin-right: 0
+    margin-right: 0;
 }
 
 .pills__guestbook li:first-child {
-    margin-left: 0
+    margin-left: 0;
 }
 
 .pills--boxed .pills__item {
-    border: 1px solid transparent
+    border: 1px solid transparent;
 }
 
 .pills--boxed .pills__item.is__active {
     background: #fff;
-    border-color: #e4e4e4
+    border-color: #e4e4e4;
 }
 
 .pills--boxed .pills__item.is__active::after {
-    display: none
+    display: none;
 }
 
-.icon {
-    -webkit-transition: font-size 250ms cubic-bezier(0.19, 1, 0.22, 1);
-    transition: font-size 250ms cubic-bezier(0.19, 1, 0.22, 1)
-}
-
-.icon__action {
-    cursor: pointer
-}
-
-.icon-small {
-    font-size: 10px
-}
-
-.icon--big {
-    font-size: 22px;
-    padding: 0 5px
-}
-
-.icon--mbig {
-    font-size: 36px;
-    padding: 0 5px
-}
-
-.icon--sbig {
-    font-size: 18px;
-    padding: 0 5px
-}
-
-.icon--bad, .icon_guest-cancel {
-    color: #a94442
-}
-
-.icon--warning {
-    color: #ffb923
-}
-
-.icon_guest-unanswered {
-    color: #b1b1b1
-}
-
-.icon--good, .icon_guest-approved {
-    color: #6cce6b
+.cursor-pointer {
+  cursor: pointer;
 }

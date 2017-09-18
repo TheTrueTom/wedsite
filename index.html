@@ -90,7 +90,10 @@
 					<p class="songDisclaimer">Une idée de musique pour la playlist du mariage ?</p>
 					<form method="POST" name="songform" action="src/song-form-handler.php">
 					<div id="name">
-						<input type="text" placeholder="Nom de la musique" id="nom" class="required" name="name" minlength="2" required/>
+						<input type="text" placeholder="Proposé par ..." id="nom" class="required" name="name" minlength="2" required/>
+					</div>
+					<div id="message">
+						<input type="text" placeholder="Nom de la musique" id="musique" class="required" name="musique" minlength="2" required/>
 					</div>
 					<div id="send">
 						<input id="submit" type="submit" name="submit" value="Proposer"/>
@@ -169,13 +172,14 @@ window.onload = function() {
     }
 
     var success = GetURLParameter("success");
+    var name = GetURLParameter("name");
 
 	if (success == 1) {
 		alert("Merci beaucoup pour ton message !");
 	}
 
 	if (success == 2) {
-		alert("Merci pour cette musique suggérée !")
+		alert("Merci " + decodeURIComponent(name) + " pour cette musique suggérée !")
 	}
 };
 </script>
