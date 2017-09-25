@@ -21,11 +21,13 @@
 </head>
 <body>
 <div id="mainContainer">
-	<div id="names">
-		Delphine<br />
-		& Thomas
+	<div id="presentation">
+		<div id="names">
+			Delphine<br />
+			& Thomas
+		</div>
+		<div id="countdown">J - <span id="countdown_day">--</span></div>
 	</div>
-	<div id="countdown">J - <span id="countdown_day">--</span></div>
 	<div id="SaveTheDate" class="dark">
 		<iframe src="https://www.youtube.com/embed/H9Ziqa06buU" frameborder="0" allowfullscreen></iframe>
 	</div>
@@ -143,14 +145,16 @@ window.onload = function() {
                 document.getElementById('messageForm').style.display = 'block';
                 document.getElementById('songForm').style.display = 'none';
                 setActivePill("#pill-messagetype-list", "pill-message")
-            });
+    });
     
     $(".js-song-message").click(function() {
                 $("#content_type-song").prop("checked", !0);
                 document.getElementById('songForm').style.display = 'block';
                 document.getElementById('messageForm').style.display = 'none';
                 setActivePill("#pill-messagetype-list", "pill-song")
-            });
+    });
+
+    $('#countdown').css('bottom', $('#navigationBar').height() + $('#countdown').height() * 2);
     
     var setActivePill = function(pillList, activePill) {
         $(pillList).find('li').each(function() {
@@ -187,6 +191,11 @@ window.onload = function() {
 		alert("Merci " + decodeURIComponent(name) + " pour cette musique suggérée !")
 	}
 };
+
+window.onresize = function() {
+	$('#countdown').css('bottom', $('#navigationBar').height() + $('#countdown').height() * 2);
+};
+
 </script>
 <script language="JavaScript">
 	countdownManager = {

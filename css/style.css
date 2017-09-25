@@ -157,8 +157,6 @@ BARRE DE NAVIGATION
   color: #555;
   font-size: 1em;
   text-decoration: none;
-  /*padding-left: 1em;
-  padding-right: 1em;*/
   padding-left: 0.5em;
   padding-right: 0.5em;
   transition: 0.4s;
@@ -180,8 +178,13 @@ BARRE DE NAVIGATION
 }
 
 #navigationBar img:hover {
-  height: 1.7em;
   filter: brightness(0.5);
+}
+
+@media only screen and (max-width:600px) {
+    #navigationBar a {
+        padding-left: 0.3em;
+    }
 }
 
 /*******************************************************************************
@@ -189,6 +192,10 @@ BARRE DE NAVIGATION
 PREMIÈRE PAGE
 
 *******************************************************************************/
+
+#presentation {
+  height: 100vh;
+}
 
 #names {
   padding-top: 2vh;
@@ -198,18 +205,24 @@ PREMIÈRE PAGE
   font-weight: 300;
   font-size: 5em;
   text-align: right;
-
-  height: 85vh;
 }
 
 #countdown {
-  padding-bottom: 1.8em;
   padding-left: 2vw;
 
   color: white;
   font-weight: 700;
-  font-size: 3vw;
+  font-size: 1.5em;
   text-align: left;
+
+  position: absolute;
+  bottom: 2em;
+}
+
+@media only screen and (max-width:767px) {
+    #names {
+        font-size: 3em;
+    }
 }
 
 /*******************************************************************************
