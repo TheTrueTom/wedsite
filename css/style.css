@@ -69,8 +69,14 @@ Main Components
 }
 
 .social img {
-  height: 20vh;
+  height: 8em;
   width: auto;
+}
+
+@media only screen and (max-width: 767px) {
+  .social img {
+    height: 4em;
+  }
 }
 
 .social a {
@@ -324,6 +330,7 @@ textarea {
   width: 30vw;
   margin: 0 auto;
   padding-top: 2em;
+  padding-left: 1em;
 }
 
 .pills {
