@@ -196,7 +196,7 @@ PREMIÈRE PAGE
 
   color: white;
   font-weight: 300;
-  font-size: 6vw;
+  font-size: 5em;
   text-align: right;
 
   height: 85vh;
@@ -207,7 +207,7 @@ PREMIÈRE PAGE
   padding-left: 2vw;
 
   color: white;
-  font-weight: 300;
+  font-weight: 700;
   font-size: 3vw;
   text-align: left;
 }
