@@ -39,7 +39,6 @@ h1 {
 }
 
 h2 {
-
   font-weight: 300;
   font-size: 1.2em;
   padding-bottom: 2em;
@@ -82,12 +81,20 @@ Main Components
 
 .centeredText {
   text-align: center;
-  margin: 20vh;
+  margin-top: 2em;
+}
+
+.centered {
+  text-align: center;
 }
 
 .textLeft {
   vertical-align: middle;
   display: table-cell;
+}
+
+.fullWidth {
+  width: 100%;
 }
 
 .textRight {
@@ -200,6 +207,12 @@ PREMIÈRE PAGE
   text-align: right;
 }
 
+#event-date {
+  vertical-align: top;
+  font-size: 0.4em;
+  margin-right: 2px;
+}
+
 #countdown {
   padding-left: 2vw;
 
@@ -216,6 +229,52 @@ PREMIÈRE PAGE
     #names {
         font-size: 3em;
     }
+}
+
+.arrow-wrap {
+  position:absolute;
+  z-index:1;
+  left:50%;
+  top:75%;
+  margin-left:-5em;
+  width:10em;
+  height:10em;
+  padding:4em 2em;
+  border-radius:50%;
+  font-size:0.5em;
+  display:block;
+}
+
+.arrow {
+  float: left;
+  position: relative;
+  height: 35px;
+  width: 35px;
+  transform: rotate(-135deg);
+  transform-origin: center center;
+  border-top: 1px solid rgba(255, 255, 255 ,0.8);
+  border-left: 1px solid rgba(255, 255, 255 ,0.8);
+  margin-left: -3px;
+  margin-right: -3px;
+  margin-bottom: -3px;
+  box-shadow: -2px -2px 2px 0px rgba(50, 50, 50, 0.3);
+}
+
+@keyframes arrowAnimation {
+    0%    { top: 0; }
+    5%    { top: 12%; }
+    10%   { top: 0%; }
+    15%   { top: 12%; }
+    20%   { top: 0; }
+    25%   { top: 12%; }
+    30%   { top: 0; }
+    100%  { top: 0; }
+  }
+  
+.arrow-wrap .arrow {
+  animation: arrowAnimation 5s 0.4s;
+  animation-delay: 3s;
+  animation-iteration-count: infinite;
 }
 
 /*******************************************************************************
@@ -250,7 +309,7 @@ RUBRIQUES
 }
 
 #hebergements {
-  height: 100vh;
+  
 }
 
 #covoiturage {
@@ -354,9 +413,59 @@ MAP
 
 *******************************************************************************/
 
-#map iframe {
-  height: 100vh;
+#map {
+  height: 95vh;
   width: 100%;
+}
+
+/*******************************************************************************
+
+RSVP
+
+*******************************************************************************/
+
+.rsvp_iframe {
+  margin-top: 1em;
+  width: 100%;
+}
+
+/*******************************************************************************
+
+RSVP
+
+*******************************************************************************/
+
+.listeText {
+  width: 70%;
+}
+
+.liste-button
+{
+  border: none;
+  border-radius: 10px;
+  font-family: 'Annie Use Your Telescope', cursive;
+  font-size: 2em;
+  color: #A8BDD9;
+  text-decoration: none;
+}
+
+.liste-blue
+{
+  padding: 0.5em;
+  background-color: rgb(248, 248, 248);
+  border-bottom: 5px solid #a0afc1;
+  text-shadow: 0px -1px #a0afc1;
+}
+
+.liste-button:active
+{
+  transform: translate(0px,5px);
+  -webkit-transform: translate(0px,5px);
+  border-bottom: 1px solid;
+}
+
+.aerated-p {
+  margin-top: 1em;
 }
 
 /*******************************************************************************
@@ -382,27 +491,31 @@ input {
   width: 100%;
   padding: 9px 15px;
   background: rgba(255,255,255,0.7);
-  border: 1px solid rgba(0,0,0,0.4);
-  font-size: 14px;
+  border: 0.1px solid rgba(0, 0, 0, 0.15);
+  font-size: 1em;
   color: #555;
-  border-radius: 5px;
-  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+  border-radius: 7px;
+  box-shadow: inset 2px 2px rgba(0, 0, 0, 0.3);
+  font-family: 'Quicksand', sans-serif;
 }
 
 textarea {
   width: 100%;
   padding: 9px 15px;
   background: rgba(255,255,255,0.7);
-  border: 1px solid rgba(0,0,0,0.4);
-  font-size: 14px;
+  border: 0.1px solid rgba(0, 0, 0, 0.15);
+  font-size: 1em;
   color: #555;
   resize: none;
   border-radius: 5px;
-  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+  box-shadow: inset 2px 2px rgba(0, 0, 0, 0.3);
+  font-family: 'Quicksand', sans-serif;
 }
 
 #submit {
-  box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.33);
+  font-size: 1.4em;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+  font-family: 'Annie Use Your Telescope', cursive;
 }
 
 #instagram {
@@ -500,3 +613,4 @@ textarea {
 .cursor-pointer {
   cursor: pointer;
 }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       

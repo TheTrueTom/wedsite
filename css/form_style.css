@@ -19,6 +19,7 @@ body {
 .salutation {
   font-size: 2em;
   padding-bottom: 0.4em;
+  margin-top: 0.4em;
 }
 
 .answered_result {
@@ -32,6 +33,90 @@ body {
 
 .not_me_prompt, .not_me_promt:visited {
   font-size: 0.4em;
+}
+
+.error_question {
+  font-size: 0.8em;
+}
+
+.help_icon {
+  height: 1.2em;
+}
+
+.tooltip {
+  cursor: help; text-decoration: none;
+  position: relative;
+}
+
+.tooltip span {
+  margin-left: -999em;
+  position: absolute;
+}
+
+.tooltip span {
+  visibility: hidden;
+  border-radius: 6px;
+  position: absolute; 
+  left: 2em;
+  top: -0.5em;
+  z-index: 99;
+  margin-left: 0; width: 250px;
+  background-color: #444;
+  color: #fff;
+  font-size: 0.7em;
+}
+
+.tooltip:hover span {
+  visibility: visible;
+}
+
+.tooltip .tooltiptext::after span {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent black transparent transparent;
+}
+
+.classic { padding: 0.5em; }
+
+/*=================================================================*/
+/* TABLE DES CO-INVITÉS                                            */
+/*=================================================================*/
+
+#overlay_background {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.7);
+  z-index: 39;
+}
+
+.overlay {
+  position: fixed;
+  text-align: center;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-family: 'Annie Use Your Telescope', sans-serif;
+  font-size: 3em;
+  padding: 0.4em 0.7em;
+  border-radius: 7px;
+  z-index: 40;
+}
+
+.green_overlay {
+  background-color: rgba(137, 186, 78, 1);
+}
+
+.red_overlay {
+  background-color: rgba(204, 109, 86, 1);
 }
 
 /*=================================================================*/
@@ -111,10 +196,6 @@ body {
   left: 11px;
   color: #aaaaaa;
   opacity: 0;
-}
-
-.switch-input:checked ~ .switch-label {
-  background: #E1B42B;
 }
 
 .switch-input:checked ~ .switch-label:before {
@@ -221,10 +302,6 @@ body {
 
 .switch-yes-no .switch-handle {
   display: none;
-}
-
-.switch-yes-no .switch-input:checked ~ .switch-label {
-  background: #FFF;
 }
 
 .switch-yes-no .switch-input:checked ~ .switch-label:before {
@@ -396,6 +473,7 @@ body {
   display: block;
   border: none;
   border-bottom: 1px solid #757575;
+  background-color: inherit;
 }
 
 .group input:not([type='submit']) {
@@ -521,13 +599,6 @@ body {
 /* SUBMIT BUTTON                                                   */
 /*=================================================================*/
 
-@font-face {
-  font-family: 'Pacifico';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Pacifico'), url('http://themes.googleusercontent.com/font?kit=fKnfV28XkldRW297cFLeqfesZW2xOQ-xsNqO47m55DA') format('truetype');
-}
-
 .animate
 {
   transition: all 0.1s;
@@ -590,4 +661,4 @@ body {
   border-bottom: 3px solid #a9bed8;
   text-shadow: 0px -1px #a9bed8;
 }
-                                                                                                                                                                                                                                                                                                                                                                                           
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
