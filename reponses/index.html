@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+	<meta charset="UTF-8" />
+
+	<link rel="icon" href="http://www.delphinethomas.me/favicon.ico" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style.css"> <!-- Main CSS -->
+	<link href="https://fonts.googleapis.com/css?family=Quicksand:300, 400, 500, 700" rel="stylesheet" />
+
+	<title>Delphine & Thomas</title>
+
+	<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<iframe style="width: 99%; border: none; margin: 0 auto;" id="rsvp-iFrame" class="rsvp_iframe" src="../src/results.php" onload="resizeIFrameToFitContent(this)"></iframe>
+	<script type="application/javascript">
+		function resizeIFrameToFitContent( iFrame ) {
+			iFrame.height = 0;
+		    iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
+		}
+	</script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8" />
 
-	<link rel="icon" href="http://www.delphinethomas.me/favicon.ico" />
+	<link rel="icon" href="https://www.delphinethomas.me/favicon.ico" />
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -12,6 +12,10 @@
 	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
 	<link rel="stylesheet" href="css/style.css"> <!-- Main CSS -->
 	<link href="https://fonts.googleapis.com/css?family=Quicksand:300, 400, 500, 700" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope" rel="stylesheet">
+
+	<script src='https://api.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.js'></script>
+	<link href='https://api.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel='stylesheet' />
 
 	<title>Delphine & Thomas</title>
 
@@ -22,9 +26,13 @@
 	<div id="presentation">
 		<div id="names">
 			Delphine<br />
-			& Thomas
+			& Thomas<br />
+			<span id="event-date">15 sept. 2018</span>
 		</div>
 		<div id="countdown">J - <span id="countdown_day">--</span></div>
+		<a class="arrow-wrap" href="#content">
+			<span class="arrow"></span>
+		</a>
 	</div>
 	<div id="SaveTheDate" class="category_container">
 		<iframe src="https://www.youtube.com/embed/H9Ziqa06buU" frameborder="0" allowfullscreen></iframe>
@@ -80,10 +88,128 @@
 			<span class="textRight">Pour le cocktail et le dîner, nous nous retrouverons au domaine des Ranchisses. Celui-ci se trouve sur la commune de Largentière à 35 minutes environ de Villeneuve-de-Berg. De très nombreux logements sont proposés sur place. Vous pourrez retrouver plus d'informations dans la rubrique Hébergement du site.</span></div>
 		</div>
 	</div>
-	<div id="map" class="category_container"></div>
+	<div id='map' class="category_container"></div>
 	<div id="hebergements" class="category_container">
 		<h1>Hébergement</h1>
-		<p class="centeredText">Le domaine des Ranchisses propose de nombreux hébergements. Pour plus d'informations vous pouvez cliquer sur le lien suivant en attendant que plus d'informations soient disponibles sur cette page : <a href="http://www.lesranchisses.fr">www.lesranchisses.fr</a></p>
+		<div class="subContainer">
+			<div class="row fullWidth centered">
+				<img class="centered" src="img/bed.png" />
+			</div>
+			
+			<div class="row centered">
+				<div class="hebergement_group">
+					<p class="hebergement_group_title">Sur le lieu du mariage</p>
+
+					<div class="hebergement_sub_group">
+						<p class="hebergement_group_text">Pour toute réservation de 2 nuits ou plus, nous vous invitons à consulter <a href="src/brochure_tarifs_2018_Fr.pdf">la brochure ici</a>.</p>
+					</div>
+
+					<div class="hebergement_sub_group">
+						<p class="hebergement_group_text">Pour les réservations d'une nuit en bungalow, les tarifs sont les suivants :</p>
+						<ul>
+							<li>1 chambre (2 / 4 pers) - 57 € / nuit</li>
+							<li>2 chambre (4 / 6 pers) - 85 € / nuit</li>
+							<li>3 chambre (6 / 8 pers) - 91 € / nuit</li>
+						</ul>
+					</div>
+
+					<div class="hebergement_sub_group">
+						<p class="hebergement_group_text">Ces tarifs sont hors frais de dossier, taxes de séjour (0.55€ pp/pn +18 ans) et eco-participation (0.40€ pp/pn +12 ans). Pour réserver, vous pouvez envoyer un mail à <a href="mailto:reception@lesranchisses.fr">reception@lesranchisses.fr</a> ou par téléphone en précisant être invité au mariage de Thomas Brichart et Delphine Vernos.</p>
+					</div>
+
+					<div class="hebergement_sub_group">
+						<p class="hebergement_group_text">Il est également possible de réserver un emplacement pour planter sa tente pour les plus scouts d’entre vous !</p>
+					</div>
+				</div>
+
+				<div class="hebergement_group">
+					<p class="hebergement_group_title">Moins de 5 km</p>
+
+					<div class="hebergement_sub_group">
+						<p class="hebergement_group_sub_title">Chambre d'hôte Clos des Récollets</p>
+						<p class="hebergement_group_text">4, rue des Récolets - 07110 Largentière</p>
+						<p class="hebergement_group_text">À partir de 60 € la nuit</p>
+					</div>
+
+					<div class="hebergement_sub_group">
+						<p class="hebergement_group_sub_title">Mas des Faïsses</p>
+						<p class="hebergement_group_text">Chalabrèges - 07110 Chassiers</p>
+						<p class="hebergement_group_text">À partir de 70 € la nuit</p>
+					</div>
+
+					<div class="hebergement_sub_group">
+						<p class="hebergement_group_sub_title">Hôtel Le Chêne Vert</p>
+						<p class="hebergement_group_text">07110 Rocher</p>
+						<p class="hebergement_group_text">À partir de 80 € la nuit</p>
+					</div>
+
+					<div class="hebergement_sub_group">
+						<p class="hebergement_group_sub_title">Mas de la Madeleine</p>
+						<p class="hebergement_group_text">Chemin de la Madeleine - 07110 Largentière</p>
+						<p class="hebergement_group_text">À partir de 110 € la nuit</p>
+					</div>
+				</div>
+
+				<div class="hebergement_group">
+					<p class="hebergement_group_title">Entre 5 et 10 km</p>
+
+					<div class="hebergement_sub_group">
+						<p class="hebergement_group_sub_title">Domaine de l'Eau Vive</p>
+						<p class="hebergement_group_text">Le Roubreau - 07110 Largentière</p>
+						<p class="hebergement_group_text">À partir de 95 € la nuit</p>
+					</div>
+					<div class="hebergement_sub_group">
+						<p class="hebergement_group_sub_title">Mas de Combeau</p>
+						<p class="hebergement_group_text">Route de joannas - 07110 Tauriers</p>
+						<p class="hebergement_group_text">À partir de 110 € la nuit</p>
+					</div>
+				</div>
+
+				<div class="hebergement_group">
+					<p class="hebergement_group_title">Plus de 10 km</p>
+
+					<div class="hebergement_sub_group">
+						<p class="hebergement_group_sub_title">La bastide de Sanilhac</p>
+						<p class="hebergement_group_text">Quartier Laval - 07110 Sanilhac</p>
+						<p class="hebergement_group_text">À partir de 90 € la nuit</p>
+					</div>
+					<div class="hebergement_sub_group">
+						<p class="hebergement_group_sub_title">Le mas de Baume</p>
+						<p class="hebergement_group_text">Baume - 07260 Rosières</p>
+						<p class="hebergement_group_text">À partir de 90 € la nuit</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="row fullWidth centered hebergement_disclaimer">
+				Cette liste est non exhaustive, n'hésitez pas à regarder également sur AirBnB qui propose de nombreuses locations autour du domaine !
+			</div>
+		</div>
+	</div>
+	<div id="RSVP" class="category_container">
+		<h1>Répondre à notre invitation</h1>
+		<iframe id="rsvp-iFrame" class="rsvp_iframe" src="src/rsvp_display.php" onload="resizeIFrameToFitContent(this)"></iframe>
+	</div>
+	<div id="liste" class="category_container">
+		<h1>Liste de mariage</h1>
+		<div class="subContainer">
+			<div class="row fullWidth centered">
+				<img class="centered" src="img/gift.png" />
+				<span  class="listeText">
+					<p class='aerated-p'>Vous souhaitez nous offrir un cadeau mais vous n'avez pas d'idées ?</p>
+					<p class='aerated-p'>Nous avons pensé à vous et avons construit une liste que vous pouvez consulter en cliquant sur le lien qui s'affiche ci-après.</p>
+					<p class='aerated-p'>Pour celles et ceux qui préfèrent, une boîte sera disponible dans la salle de réception. Vous pourrez y glisser vos dons, mots doux et autres missives.</p>
+					<p class='aerated-p'>Pour toute question vous pouvez également bien sûr nous contacter.</p>
+				</span>
+			</div>
+			<div class="row centeredText fullWidth">
+				<span>
+					<form action="http://delphine-thomas.ameliste.fr">
+						<button type="submit" class="liste-button liste-shadow liste-animate liste-blue">Liste de mariage</button>
+					</form>
+				</span>
+			</div>
+		</div>
 	</div>
 	<div id="Contact" class="category_container">
 		<h1>Nous contacter</h1>
@@ -143,22 +269,14 @@
 	</div>
 </div>
 <div id="navigationBar">
-	<a href="#SaveTheDate"><img src="img/STD.png" alt="Save the date" /></a>
 	<a href="#planning"><img src="img/planning.png" alt="Planning" /></a>
-	<a href="#lieu"><img src="img/lieu.png" alt="Lieu & Hébergements" ></a>
-	<a href="#map"><img src="img/map.png" alt="Carte" ></a>
+	<a href="#lieu"><img src="img/map.png" alt="Carte" ></a>
+	<a href="#hebergements"><img src="img/bed-small.png" alt="Hébergements" ></a>
+	<a href="#RSVP"><img src="img/rsvp.png" alt="RSVP" ></a>
+	<a href="#liste"><img src="img/gift-small.png" alt="Liste de mariage" ></a>
 	<a href="#Contact"><img src="img/Contact.png" alt="Contact" /></a>
 	<div class="lastItem">Delphine + Thomas = 2018</div>
 </div>
-<script language="JavaScript">
-	// Code for validating the form
-	// Visit http://www.javascript-coder.com/html-form/javascript-form-validation.phtml
-	// for details
-	var frmvalidator  = new Validator("contactform");
-	frmvalidator.addValidation("name","req","Merci d'entrer votre nom"); 
-	frmvalidator.addValidation("email","req","Merci d'entrer votre email"); 
-	frmvalidator.addValidation("email","email","Merci d'entrer un email valide"); 
-</script>
 <script language="JavaScript">
 window.onload = function() {
     $(".js-text-message").click(function() {
@@ -284,6 +402,35 @@ window.onresize = function() {
 	jQuery(function($){
 	    // Lancement du compte à rebours au chargement de la page
 	    countdownManager.init();
+	});
+</script>
+<script type="application/javascript">
+	function resizeIFrameToFitContent( iFrame ) {
+		iFrame.height = 0;
+	    iFrame.height = iFrame.contentWindow.document.body.scrollHeight + 80;
+	}
+</script>
+<script type="text/javascript">
+	//this is where we apply opacity to the arrow
+	$(window).scroll( function(){
+
+	  //get scroll position
+	  var topWindow = $(window).scrollTop();
+	  //multipl by 1.5 so the arrow will become transparent half-way up the page
+	  var topWindow = topWindow * 4;
+	  
+	  //get height of window
+	  var windowHeight = $(window).height();
+	      
+	  //set position as percentage of how far the user has scrolled 
+	  var position = topWindow / windowHeight;
+	  //invert the percentage
+	  position = 1 - position;
+
+	  //define arrow opacity as based on how far up the page the user has scrolled
+	  //no scrolling = 1, half-way up the page = 0
+	  $('.arrow-wrap').css('opacity', position);
+
 	});
 </script>
 <script>
@@ -496,3 +643,4 @@ window.onresize = function() {
 </script>
 </body>
 </html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  

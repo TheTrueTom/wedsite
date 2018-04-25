@@ -41,6 +41,7 @@
 			
 			$post_vars = filter_input_array(INPUT_POST);
 			$co_answerers = preg_grep('/^answer_[0-9]+$/', array_keys($post_vars));
+			$co_invites = preg_grep('/^co_[0-9]+$/', array_keys($post_vars));
 
 			$ids = array($_SESSION['id']);
 
@@ -51,13 +52,30 @@
 				}
 			}
 
+			$not_ids = array();
+
+			if (count($co_invites) != 0) {
+				foreach ($co_invites as $co_invit) {
+					$co_id = str_replace('co_', '', $co_invit);
+
+					if (!in_array($co_id, $ids)) {
+						array_push($not_ids, $co_id);
+					}
+				}
+			}
+
 			$query = new dbQuery();
 			$result = $query->setAnswerForIds($ids, $cocktail, $diner, $party);
+
+			if (count($not_ids) != 0) {
+				$query2 = new dbQuery();
+				$result2 = $query2->setAnswerForIds($not_ids, 0, 0, 0);
+			}
 
 			if ($result == 1) {
 				$_SESSION['answered_sent'] = 1;
 			} else {
-				$_SESSION['error'] = "Il y a une erreur lors de l'envoi de votre réponse. Merci de réessayer plus tard ou de contacter les mariés en utilisant le formulaire situé au bas de cette page";
+				$_SESSION['error'] = "Merci de réessayer plus tard ou de contacter les mariés en utilisant le formulaire situé au bas de cette page";
 			}
 		}
 
@@ -81,7 +99,7 @@
 			</div>
 			<?php
 
-			session_unset('error'); // Pour ne pas réafficher le message à chaque rechargement de page
+			unset($_SESSION['error']); // Pour ne pas réafficher le message à chaque rechargement de page
 		}
 
 		if (isset($_SESSION['nom']) && isset($_SESSION['prenom']) && isset($_SESSION['cp'])) {
@@ -90,7 +108,7 @@
 
 			$result = $query->getDataWith($_SESSION["nom"], $_SESSION["prenom"], $_SESSION["cp"]);
 
-			if ($result == NULL) {
+			if ($result == NULL || !$result->isInvited()) {
 				session_unset();
 
 				session_destroy();
@@ -194,7 +212,9 @@
 				?>
 				<table class="co-invitee-table">
 					<tr>
-						<th colspan="2">Je serai accompagné de : <a class="tooltip" href="#"><img class="help_icon" src='../img/help.png' /><span class="classic">Passez l'indicateur sur oui pour indiquer que cette personne vous accompagnera au mariage. Passez l'indicateur sur non pour indiquer qu'elle ne sera pas présente. </span></a></th>
+						<th colspan="2">Je serai accompagné de : <a class="tooltip" href="#"><img class="help_icon" src='../img/help.png' />
+							<span class="classic">Passez l'indicateur sur oui pour indiquer que cette personne vous accompagnera au mariage. Passez l'indicateur sur non pour indiquer qu'elle ne sera pas présente. </span></a>
+						</th>
 					</tr>
 				<?php
 				foreach ($co_invitees as $co_invitee) {
@@ -216,6 +236,7 @@
 									}
 									?>
 								/>
+								<input class="co-switch-input" type="hidden" name="co_<?php echo($co_invitee->id); ?>" />
 								<span class="co-switch-label" data-on="Oui" data-off="Non"></span> 
 								<span class="co-switch-handle"></span> 
 							</label>
@@ -289,4 +310,4 @@
 	</script>
 </body>
 </html>
-   
+                                                                                                                                                                     

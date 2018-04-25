@@ -86,6 +86,7 @@ Main Components
 
 .centered {
   text-align: center;
+  margin: auto;
 }
 
 .textLeft {
@@ -405,6 +406,42 @@ PLANNING
 
 .planning_item:nth-child(5n+5) {
   border-color: rgb(151,186,163);
+}
+
+/*******************************************************************************
+
+HEBERGEMENTS
+
+*******************************************************************************/
+
+.hebergement_group {
+  float: left;
+  max-width: 260px;
+  margin: 0 1em 1em 1em;
+}
+
+.hebergement_group_title {
+  font-weight: bold;
+  padding: 1em;
+  font-size: 1.1em;
+}
+
+.hebergement_group_text, li {
+  font-size: 0.8em;
+}
+
+.hebergement_sub_group {
+  padding-bottom: 1em;
+}
+
+.hebergement_group_sub_title {
+  font-weight: bold;
+  font-size: 0.8em;
+}
+
+.hebergement_disclaimer {
+  display: inline-block;
+  font-size: 0.8em;
 }
 
 /*******************************************************************************
