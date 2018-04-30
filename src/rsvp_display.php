@@ -207,7 +207,7 @@
 			$co_invitees = $result->coInvitees();
 
 			if (count($co_invitees) == 0) {
-				print('<p>Tu ne seras pas accompagné(e)</p>');
+				print('<p>Nos listes ne mentionnent aucun accompagnant.</p><p>Si tu penses que c\'est une erreur, contacte nous au bas de cette page.</p>');
 			} else {
 				?>
 				<table class="co-invitee-table">
