@@ -142,7 +142,7 @@
 				Clique sur les ronds ci-dessous pour indiquer ta présence, un cercle vert indique que tu seras présent.
 			</div>
 			
-			<form action="#" method="POST">
+			<form action="#" method="POST" name="RSVPForm">
 
 			<?php
 
@@ -247,7 +247,7 @@
 			<?php } ?>
 
 			<input type="hidden" name="just_answered">
-			<input type="submit" href="#" class="action-button shadow animate blue" />
+			<input type="submit" href="#" class="action-button shadow animate blue" onclick="return validateForm()" />
 
 			</form>
 			<span class="error_question">Tu penses qu’il y a une erreur avec ton invitation ? Contacte nous au <a href="#Contact">bas de cette page</a></span>
@@ -308,6 +308,18 @@
 		    document.getElementById("overlay_background").style.display = "none";
 		}
 	</script>
+	<script language="JavaScript">
+		function validateForm() {
+			var cocktail = document.forms["RSVPForm"]["cocktail_answer"].checked;
+			var diner = document.forms["RSVPForm"]["diner_answer"].checked;
+			var party = document.forms["RSVPForm"]["party_answer"].checked;
+
+			if (cocktail == false && diner == false && party == false) {
+				return confirm("Vous allez indiquer que vous ne serez pas présent au mariage.\nCliquez sur ok pour confirmer.");
+			} else {
+				return true;
+			}
+		}
+	</script>
 </body>
 </html>
-                                                                                                                                                                     
