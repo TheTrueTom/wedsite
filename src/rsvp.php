@@ -301,7 +301,7 @@ class Invitee {
 
 		$co_invites_string = $row["co_invites"];
 		
-		if (co_invites_string != '' && !empty($co_invites_string)) {
+		if ($co_invites_string != '' && !empty($co_invites_string)) {
 			$co_invites_string  = str_replace(' ', '', $co_invites_string);
 			$this->co_invites 	= explode(",", $co_invites_string);
 		}
