@@ -235,7 +235,7 @@ class dbQuery {
 				((!empty($data["party_invite"])) 	? "{$data["party_invite"]}, " : "0, ") .
 				((!empty($data["cocktail_answer"])) ? "{$data["cocktail_answer"]}, " : "0, ") .
 				((!empty($data["diner_answer"])) 	? "{$data["diner_answer"]}, " : "0, ") .
-				((!empty($data["party_answer"])) 	? "{$data["party_answer"]}, " : "0)");
+				((!empty($data["party_answer"])) 	? "{$data["party_answer"]})" : "0)");
 
 		$result = mysqli_query($link, $sql);
 		
